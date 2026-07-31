@@ -67,7 +67,7 @@ function RouteComponent() {
         <Card>
           <CardContent>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Hi, I'm Yash Agrawal, a software Engineer, having good experience
+              Hi, I'm Yash Agrawal, a Software Engineer, having good experience
               in building highly complex web applications. I enjoy working on
               problems that are technically challenging and require deep
               thinking, not just routine development work.
