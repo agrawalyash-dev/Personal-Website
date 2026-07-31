@@ -44,7 +44,7 @@ body {
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 0.25rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.6 0.118 184.704);
@@ -142,5 +142,10 @@ body {
   }
   html {
     @apply font-serif;
+  }
+
+  /* Custom */
+  .wrapper {
+    @apply w-full max-w-7xl mx-auto px-4 2xl:px-0;
   }
 }
