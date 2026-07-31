@@ -4,6 +4,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 
 import appCss from "../styles.css?url";
 import Header from "#/components/header";
+import Footer from "#/components/footer";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -40,8 +41,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Header />
-        {children}
+        <div className="flex flex-col min-h-dvh">
+          <Header />
+          <main className="flex-1 bg-secondary/30">
+            <div className="wrapper">
+              {children}
+            </div>
+          </main>
+          <Footer />
+        </div>
         <TanStackDevtools
           config={{
             position: "bottom-right",
