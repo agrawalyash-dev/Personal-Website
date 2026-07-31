@@ -30,6 +30,26 @@ export const Route = createRootRoute({
         rel: "icon",
         href: "/favicon.jpg",
       },
+      {
+        property: "og:title",
+        content: "Yash Agrawal: Software Engineer - Vadodara, Gujarat, India",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:image",
+        content: "https://agrawalyash.com/og-image.jpg",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:image",
+        content: "https://agrawalyash.com/og-image.jpg",
+      },
     ],
   }),
   shellComponent: RootDocument,
