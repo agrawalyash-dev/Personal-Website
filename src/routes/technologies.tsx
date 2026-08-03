@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   SiCloudflare,
+  SiConvex,
   SiCss,
   SiDiagramsdotnet,
   SiDocker,
@@ -39,16 +40,19 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { TbBrain, TbRoute } from "react-icons/tb";
+import { TbBrain, TbRoute, TbSql } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
 
 const techCategories = [
   {
-    category: "Programming Languages",
+    category: "Languages",
     items: [
       { icon: SiJavascript, name: "JavaScript" },
       { icon: SiTypescript, name: "TypeScript" },
-      { icon: SiPython, name: "Python" },
+      { icon: TbSql, name: "SQL" },
+      { icon: SiHtml5, name: "HTML" },
+      { icon: SiCss, name: "CSS" },
+      // { icon: SiPython, name: "Python" },
     ],
   },
   {
@@ -58,10 +62,9 @@ const techCategories = [
       { icon: SiExpress, name: "Express.js" },
       { icon: SiNestjs, name: "Nest.js" },
       { icon: SiFastify, name: "Fastify" },
-      { icon: SiRedis, name: "Redis" },
-      { icon: SiPrisma, name: "Prisma" },
-      { icon: SiMongoose, name: "Mongoose" },
-      { icon: SiDrizzle, name: "Drizzle" },
+      // { icon: SiSupabase, name: "Supabase" },
+      // { icon: SiFirebase, name: "Firebase" },
+      { icon: SiConvex, name: "Convex" },
     ],
   },
   {
@@ -71,40 +74,36 @@ const techCategories = [
       { icon: SiNextdotjs, name: "Next.js" },
       { icon: SiTailwindcss, name: "Tailwind CSS" },
       { icon: SiShadcnui, name: "ShadCN" },
-      { icon: SiHtml5, name: "HTML" },
-      { icon: SiCss, name: "CSS" },
     ],
   },
   {
     category: "Databases",
     items: [
       { icon: SiMongodb, name: "MongoDB" },
-      { icon: SiPostgresql, name: "SQL" },
       { icon: SiPostgresql, name: "PostgreSQL" },
-      { icon: SiSupabase, name: "Supabase" },
-      { icon: SiNeon, name: "NeonDB" },
-      { icon: SiFirebase, name: "Firebase" },
-      { icon: SiQdrant, name: "QdrantDB" },
-      { icon: SiNeo4J, name: "Neo4jDB" },
+      { icon: SiRedis, name: "Redis" },
+      { icon: SiPrisma, name: "Prisma" },
+      { icon: SiMongoose, name: "Mongoose" },
+      { icon: SiDrizzle, name: "Drizzle" },
     ],
   },
-  {
-    category: "AI & LLM",
-    items: [
-      { icon: SiLangchain, name: "LangChain" },
-      { icon: TbRoute, name: "LangGraph" },
-      { icon: TbBrain, name: "LangSmith" },
-      { icon: SiPydantic, name: "Pydantic AI" },
-    ],
-  },
+  // {
+  //   category: "AI & LLM",
+  //   items: [
+  //     { icon: SiLangchain, name: "LangChain" },
+  //     { icon: TbRoute, name: "LangGraph" },
+  //     { icon: TbBrain, name: "LangSmith" },
+  //     { icon: SiPydantic, name: "Pydantic AI" },
+  //   ],
+  // },
   {
     category: "DevOps & Cloud",
     items: [
       { icon: SiDocker, name: "Docker" },
-      { icon: FaAws, name: "AWS" },
-      { icon: SiGooglecloud, name: "GCP" },
+      // { icon: FaAws, name: "AWS" },
+      // { icon: SiGooglecloud, name: "GCP" },
       { icon: SiCloudflare, name: "Cloudflare" },
-      { icon: SiJenkins, name: "Jenkins" },
+      // { icon: SiJenkins, name: "Jenkins" },
       { icon: SiGit, name: "Git" },
       { icon: SiGithub, name: "GitHub" },
       { icon: SiVercel, name: "Vercel" },
