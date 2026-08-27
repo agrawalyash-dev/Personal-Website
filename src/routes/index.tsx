@@ -207,7 +207,7 @@ function Home() {
             <CardHeader>
               <CardDescription>Project</CardDescription>
               <CardAction>
-                <a href="https://www.broml.com">
+                <a href="https://www.vuin.in" target="_blank">
                   <Button
                     variant={"link"}
                     className="text-muted-foreground hover:text-primary"
@@ -218,19 +218,67 @@ function Home() {
               </CardAction>
             </CardHeader>
             <CardContent className="mt-auto">
-              <p className="text-xl font-semibold sm:text-2xl">BroML</p>
+              <p className="text-xl font-semibold sm:text-2xl">VUIN</p>
               <p className="mt-2 text-sm text-muted-foreground sm:text-base">
-                A multi-agent AI platform where specialized agents — an email
-                agent, a coding agent, and more — collaborate with each other to
-                solve tasks outside their own expertise.
+                An exclusive social networking platform for tech professionals
+                from India ("Virtual Universe from India") — built with a NestJS
+                + MongoDB backend using Clerk for authentication and Cloudinary
+                for verified media uploads, featuring a personalized feed with
+                engagement-based ranking, a LinkedIn-style Connect system
+                (requests, accept/reject, blocking), and Posts with threaded
+                Comments, Likes, and Shares; realtime end-to-end encrypted chat
+                planned via Convex. Client app built with TanStack Start, admin
+                dashboard with React + Vite.
               </p>
             </CardContent>
             <CardFooter className="flex flex-wrap gap-2">
               <Badge
                 variant={"outline"}
-                className="p-3 text-muted-foreground sm:p-4 bg-primary/10"
+                className="p-3 text-muted-foreground sm:p-4"
               >
-                In Progress
+                NestJS
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                MongoDB
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                Clerk
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                Cloudinary
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                TanStack Start
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                React.js
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                Vite
+              </Badge>
+              <Badge
+                variant={"outline"}
+                className="p-3 text-muted-foreground sm:p-4"
+              >
+                Convex BaaS
               </Badge>
             </CardFooter>
           </Card>
@@ -299,7 +347,7 @@ function Home() {
             <CardHeader>
               <CardDescription>Project</CardDescription>
               <CardAction>
-                <a href="https://chat.zenvaa.com">
+                <a href="https://chat.zenvaa.com" target="_blank">
                   <Button
                     variant={"link"}
                     className="text-muted-foreground hover:text-primary"
@@ -375,7 +423,10 @@ function Home() {
             <CardHeader>
               <CardDescription>Project</CardDescription>
               <CardAction>
-                <a href="https://agrawalyash.notion.site/Vanilla-Junction-Case-Study-3a35c8bb362a80468165c12ba23ad11f">
+                <a
+                  href="https://agrawalyash.notion.site/Vanilla-Junction-Case-Study-3a35c8bb362a80468165c12ba23ad11f"
+                  target="_blank"
+                >
                   <Button
                     variant={"link"}
                     className="text-muted-foreground hover:text-primary"
