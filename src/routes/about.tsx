@@ -15,7 +15,15 @@ export const Route = createFileRoute("/about")({
 
 const journey = [
   {
-    year: "2024 — Present",
+    year: "2026 — Present",
+    title: "Full Stack Developer Intern",
+    org: "Codeflame Technology Pvt. Ltd.",
+    desc:
+      "Contributing to real-world full-stack projects by building responsive frontend experiences, backend APIs, and database-driven applications while working with modern development workflows and production-focused engineering practices.",
+    icon: BriefcaseBusiness,
+  },
+  {
+    year: "2024 — 2026",
     title: "Software Engineer",
     org: "Freelance · Self-Employed",
     desc:
@@ -23,7 +31,7 @@ const journey = [
     icon: BriefcaseBusiness,
   },
   {
-    year: "2023 — Present",
+    year: "2023 — 2027",
     title: "BCA Honours",
     desc: "Bachelor of Computer Applications (Honours)",
     icon: GraduationCap,
@@ -67,23 +75,37 @@ function RouteComponent() {
         <Card>
           <CardContent>
             <p className="text-base leading-relaxed text-muted-foreground">
-              Hi, I'm Yash Agrawal, a Software Engineer, having good experience
-              in building highly complex web applications. I enjoy working on
-              problems that are technically challenging and require deep
-              thinking, not just routine development work.
+              Hi, I'm Yash Agrawal, a software engineer focused on building
+              complex, high-scale web applications and solving technically
+              challenging problems that require deep thinking beyond routine
+              development.
               <br />
               <br />
-              Presently, I am exploring different domains like aerospace, AI,
-              cloud computing, etc. to figure out which field I want to commit
-              myself to in the long run. I have not finalized on any one domain
-              as of now, and honestly, I am in no hurry to do so.
+              My specialization is Communication & Social Platforms — the
+              systems that enable people, communities, and organizations to
+              communicate, collaborate, and build meaningful networks online.
+              I’m particularly interested in the engineering challenges behind
+              real-time communication, distributed systems, privacy, security,
+              networking, and intelligent interaction.
               <br />
               <br />
-              The only thing I am clear about is that I want to be part of a
-              domain which is highly future innovation oriented, something where
-              real advancement is happening and not just surface level changes.
-              Once I find that space, I want to grow deeply into it rather than
-              just working on the surface.
+              My work in this space includes Zenvaa Meet, a WebRTC-based
+              end-to-end encrypted video calling platform, and Zenvaa Chat, an
+              end-to-end encrypted real-time messaging application. I’m
+              currently building VUIN, an exclusive social networking platform
+              for technology professionals, while also experimenting with BroML,
+              exploring how agentic systems can enable new forms of
+              communication and professional networking.
+              <br />
+              <br />
+              I’m drawn to problems where engineering depth matters — real-time
+              systems, scalability, security, distributed architectures, and
+              emerging ways of connecting people and intelligent systems.
+              <br />
+              <br />
+              My long-term goal is to go deep into the Communication & Social
+              Platforms domain and contribute to building the next generation of
+              communication and networking systems.
             </p>
           </CardContent>
         </Card>
