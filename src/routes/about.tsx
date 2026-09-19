@@ -14,14 +14,14 @@ export const Route = createFileRoute("/about")({
 });
 
 const journey = [
-  {
-    year: "2026 — Present",
-    title: "Full Stack Developer Intern",
-    org: "Codeflame Technology Pvt. Ltd.",
-    desc:
-      "Contributing to real-world full-stack projects by building responsive frontend experiences, backend APIs, and database-driven applications while working with modern development workflows and production-focused engineering practices.",
-    icon: BriefcaseBusiness,
-  },
+  // {
+  //   year: "2026 — Present",
+  //   title: "Full Stack Developer Intern",
+  //   org: "Codeflame Technology Pvt. Ltd.",
+  //   desc:
+  //     "Contributing to real-world full-stack projects by building responsive frontend experiences, backend APIs, and database-driven applications while working with modern development workflows and production-focused engineering practices.",
+  //   icon: BriefcaseBusiness,
+  // },
   {
     year: "2024 — 2026",
     title: "Software Engineer",
