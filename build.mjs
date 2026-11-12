@@ -3,18 +3,9 @@
 //   npm run build   → one-off build (also writes sitemap.xml and robots.txt)
 //   npm run dev     → build, watch for changes, serve on http://localhost:3000
 
-import {
-  cpSync,
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  rmSync,
-  statSync,
-  watch,
-  writeFileSync,
-} from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, statSync, watch, existsSync } from "node:fs";
 import { createServer } from "node:http";
-import { extname, join } from "node:path";
+import { join, extname } from "node:path";
 import matter from "gray-matter";
 import { Marked } from "marked";
 import { blocks } from "./template/blocks.mjs";
@@ -28,17 +19,13 @@ const marked = new Marked({
     link({ href, title, tokens }) {
       const text = this.parser.parseInline(tokens);
       const t = title ? ` title="${title}"` : "";
-      const e = /^https?:/.test(href)
-        ? ' target="_blank" rel="noopener noreferrer"'
-        : "";
+      const e = /^https?:/.test(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
       return `<a href="${href}"${t}${e}>${text}</a>`;
     },
   },
 });
 
-const esc = (s = "") =>
-  String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+const esc = (s = "") => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 // Curly apostrophes and quotes in text (not inside tags or attributes)
 const smarten = (html) =>
@@ -78,12 +65,7 @@ function build() {
     .join("\n");
 
   // Nav: only sections that exist
-  const navItems = [
-    ["about", "About"],
-    ["fouroc", "Fouroc"],
-    ["vuin", "VUIN"],
-    ["contact", "Contact"],
-  ]
+  const navItems = [["about", "About"], ["fouroc", "Fouroc"], ["vuin", "VUIN"], ["contact", "Contact"]]
     .filter(([id]) => parts.some((p) => p.name === id))
     .map(([id, label]) => `<a href="#${id}">${label}</a>`)
     .join("");
@@ -97,17 +79,8 @@ function build() {
     image: site + d.portrait,
     jobTitle: "Product Engineer",
     email: `mailto:${d.email}`,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Vadodara",
-      addressRegion: "Gujarat",
-      addressCountry: "IN",
-    },
-    worksFor: {
-      "@type": "Organization",
-      name: d.ventures?.group?.name,
-      url: d.ventures?.group?.url,
-    },
+    address: { "@type": "PostalAddress", addressLocality: "Vadodara", addressRegion: "Gujarat", addressCountry: "IN" },
+    worksFor: { "@type": "Organization", name: d.ventures?.group?.name, url: d.ventures?.group?.url },
     sameAs: (d.socials || []).map((s) => s.url),
   };
 
@@ -150,10 +123,7 @@ function build() {
 </urlset>
 `,
   );
-  writeFileSync(
-    join(out, "robots.txt"),
-    `User-agent: *\nAllow: /\n\nSitemap: ${site}/sitemap.xml\n`,
-  );
+  writeFileSync(join(out, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${site}/sitemap.xml\n`);
 
   console.log(`Built public/ in ${Date.now() - t0}ms`);
 }
@@ -163,44 +133,21 @@ build();
 if (process.argv.includes("--serve")) {
   let timer;
   for (const p of ["content.md", "template", "static"]) {
-    if (existsSync(join(root, p))) {
+    if (existsSync(join(root, p)))
       watch(join(root, p), { recursive: true }, () => {
         clearTimeout(timer);
         timer = setTimeout(() => {
-          try {
-            build();
-          } catch (e) {
-            console.error(e.message);
-          }
+          try { build(); } catch (e) { console.error(e.message); }
         }, 80);
       });
-    }
   }
-  const types = {
-    ".html": "text/html",
-    ".css": "text/css",
-    ".js": "text/javascript",
-    ".svg": "image/svg+xml",
-    ".png": "image/png",
-    ".jpg": "image/jpeg",
-    ".webp": "image/webp",
-    ".woff2": "font/woff2",
-    ".xml": "application/xml",
-    ".txt": "text/plain",
-    ".ico": "image/x-icon",
-    ".json": "application/json",
-  };
+  const types = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".woff2": "font/woff2", ".xml": "application/xml", ".txt": "text/plain", ".ico": "image/x-icon", ".json": "application/json" };
   createServer((req, res) => {
     let p = decodeURIComponent(req.url.split("?")[0]);
     if (p.endsWith("/")) p += "index.html";
     const f = join(out, p);
-    if (!f.startsWith(out) || !existsSync(f)) {
-      res.writeHead(404);
-      return res.end("Not found");
-    }
-    res.writeHead(200, {
-      "Content-Type": types[extname(f)] || "application/octet-stream",
-    });
+    if (!f.startsWith(out) || !existsSync(f)) { res.writeHead(404); return res.end("Not found"); }
+    res.writeHead(200, { "Content-Type": types[extname(f)] || "application/octet-stream" });
     res.end(readFileSync(f));
   }).listen(3000, () => console.log("Serving on http://localhost:3000"));
 }
